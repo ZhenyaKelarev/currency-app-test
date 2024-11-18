@@ -18,7 +18,11 @@ const CurrencyCard: React.FC<{ currency: Currency }> = ({ currency }) => (
         Курс: <strong>{currency.rate}</strong>
       </p>
     </div>
-    <Link to={`/edit/${currency.r030}`} className="currency-card__edit-button">
+    <Link
+      to={`/edit/${currency.r030}`}
+      state={currency}
+      className="currency-card__edit-button"
+    >
       Редагувати
     </Link>
   </div>

@@ -1,10 +1,16 @@
-import "../styles.css"
+import "@/styles.css"
 
-const Pagination: React.FC<{
+interface PaginationProps {
   currentPage: number
   totalPages: number
   onPageChange: (page: number) => void
-}> = ({ currentPage, totalPages, onPageChange }) => (
+}
+
+const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) => (
   <div className="pagination">
     {[...Array(totalPages)].map((_, idx) => (
       <button

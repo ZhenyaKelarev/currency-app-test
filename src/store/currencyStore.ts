@@ -1,5 +1,4 @@
-// src/store/currencyStore.ts
-import { create } from "zustand"
+import { create } from "zustand" // Example with Zustand, adapt for your state management solution
 
 interface Currency {
   r030: number
@@ -11,13 +10,17 @@ interface Currency {
 
 interface CurrencyStore {
   editedCurrencies: Currency[]
-  addEditedCurrency: (currency: Currency) => void
+  addEditedCurrency: (currencies: Currency[] | Currency) => void
 }
 
 export const useCurrencyStore = create<CurrencyStore>((set) => ({
   editedCurrencies: [],
-  addEditedCurrency: (currency) =>
-    set((state) => ({
-      editedCurrencies: [...state.editedCurrencies, currency],
-    })),
+  addEditedCurrency: (currencies) => {
+    set((state) => {
+      if (Array.isArray(currencies)) {
+        return { editedCurrencies: currencies }
+      }
+      return { editedCurrencies: [...state.editedCurrencies, currencies] }
+    })
+  },
 }))

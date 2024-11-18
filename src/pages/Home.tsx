@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useQuery } from "react-query"
-import { fetchCurrencies } from "../api/exchangeApi"
-import CurrencyCard from "../components/CurrencyCard"
+import { fetchCurrencies } from "@/api/exchangeApi"
+import CurrencyCard from "@/components/CurrencyCard"
 import Pagination from "@/components/Pagination"
 
 const Home = () => {

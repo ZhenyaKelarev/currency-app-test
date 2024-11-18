@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { useCurrencyStore } from "../store/currencyStore"
-import CurrencyCard from "../components/CurrencyCard"
-import Pagination from "../components/Pagination"
+import { useCurrencyStore } from "@/store/currencyStore"
+import CurrencyCard from "@/components/CurrencyCard"
+import Pagination from "@/components/Pagination"
 
 const EditedCurrencies = () => {
   const { editedCurrencies } = useCurrencyStore()

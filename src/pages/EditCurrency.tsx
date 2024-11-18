@@ -1,24 +1,45 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, useLocation } from "react-router-dom"
 import { useState } from "react"
-import { useCurrencyStore } from "../store/currencyStore"
+import { useCurrencyStore } from "@/store/currencyStore"
 
 const EditCurrency = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { addEditedCurrency } = useCurrencyStore()
-  const [rate, setRate] = useState<number>(0)
+  const { addEditedCurrency, editedCurrencies } = useCurrencyStore()
+  const location = useLocation()
+
+  const currency = location.state as {
+    r030: number
+    txt: string
+    rate: number
+    cc: string
+  }
+
+  const [rate, setRate] = useState<number>(currency?.rate || 0)
 
   const handleSave = () => {
     if (!id) return
 
-    const currency = {
+    const existingCurrencyIndex = editedCurrencies.findIndex(
+      (item) => item.r030 === Number(id)
+    )
+
+    const updatedCurrency = {
       r030: Number(id),
-      txt: "Валюта",
+      txt: currency.txt,
       rate,
-      cc: "UAH",
+      cc: currency.cc,
       exchangedate: "2023-07-03",
     }
-    addEditedCurrency(currency)
+
+    if (existingCurrencyIndex !== -1) {
+      const updatedCurrencies = [...editedCurrencies]
+      updatedCurrencies[existingCurrencyIndex] = updatedCurrency
+      addEditedCurrency(updatedCurrencies)
+    } else {
+      addEditedCurrency([...editedCurrencies, updatedCurrency])
+    }
+
     navigate("/edited")
   }
 
