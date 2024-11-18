@@ -8,12 +8,19 @@ interface Currency {
 }
 
 const CurrencyCard: React.FC<{ currency: Currency }> = ({ currency }) => (
-  <div>
-    <p>
-      {currency.txt} ({currency.cc})
-    </p>
-    <p>Курс: {currency.rate}</p>
-    <Link to={`/edit/${currency.r030}`}>Редагувати</Link>
+  <div className="currency-card">
+    <div className="currency-card__content">
+      <h3 className="currency-card__title">
+        {currency.txt}{" "}
+        <span className="currency-card__code">({currency.cc})</span>
+      </h3>
+      <p className="currency-card__rate">
+        Курс: <strong>{currency.rate}</strong>
+      </p>
+    </div>
+    <Link to={`/edit/${currency.r030}`} className="currency-card__edit-button">
+      Редагувати
+    </Link>
   </div>
 )
 

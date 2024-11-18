@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.currency-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.currency-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.currency-card__content {
+  flex-grow: 1;
+}
+
+.currency-card__title {
+  font-size: 18px;
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.currency-card__code {
+  font-size: 14px;
+  color: #777;
+}
+
+.currency-card__rate {
+  font-size: 16px;
+  margin: 0;
+  color: #555;
+}
+
+.currency-card__edit-button {
+  text-decoration: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.currency-card__edit-button:hover {
+  background-color: #0056b3;
+}
+
+.header {
+  background-color: #007bff;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header__link {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header__link:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.header__link:active {
+  transform: scale(1);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination__button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination__button--active {
+  background-color: #007bff;
+  color: white;
+  cursor: default;
+}
+
+.pagination__button:hover:not(.pagination__button--active) {
+  background-color: #f0f8ff;
+}
+
+.pagination__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.edit-currency {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.edit-currency__title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.edit-currency__input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.edit-currency__input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.edit-currency__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.edit-currency__button {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-currency__button.save {
+  background-color: #007bff;
+}
+
+.edit-currency__button.save:hover {
+  background-color: #0056b3;
+}
+
+.edit-currency__button.back {
+  background-color: #6c757d;
+}
+
+.edit-currency__button.back:hover {
+  background-color: #5a6268;
+}
+
+.edit-currency__button:active {
+  transform: scale(0.97);
+}

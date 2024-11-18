@@ -5,7 +5,7 @@ import { useCurrencyStore } from "../store/currencyStore"
 const EditCurrency = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { editedCurrencies, addEditedCurrency } = useCurrencyStore()
+  const { addEditedCurrency } = useCurrencyStore()
   const [rate, setRate] = useState<number>(0)
 
   const handleSave = () => {
@@ -23,16 +23,26 @@ const EditCurrency = () => {
   }
 
   return (
-    <div>
-      <h2>Редагувати валюту (ID: {id})</h2>
+    <div className="edit-currency">
+      <h2 className="edit-currency__title">Редагувати валюту (ID: {id})</h2>
       <input
         type="number"
         value={rate}
         onChange={(e) => setRate(Number(e.target.value))}
         placeholder="Новий курс"
+        className="edit-currency__input"
       />
-      <button onClick={handleSave}>Зберегти</button>
-      <button onClick={() => navigate(-1)}>Назад</button>
+      <div className="edit-currency__actions">
+        <button onClick={handleSave} className="edit-currency__button save">
+          Зберегти
+        </button>
+        <button
+          onClick={() => navigate(-1)}
+          className="edit-currency__button back"
+        >
+          Назад
+        </button>
+      </div>
     </div>
   )
 }

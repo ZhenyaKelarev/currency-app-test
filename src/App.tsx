@@ -3,11 +3,14 @@ import Home from "./pages/Home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import NotFound from "./pages/NotFound"
 import EditCurrency from "./pages/EditCurrency"
+import EditedCurrencies from "./pages/EditedCurrencies"
+import Layout from "./components/Layout"
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element: <Layout />,
       children: [
         {
           path: "/",
@@ -15,7 +18,7 @@ function App() {
         },
         {
           path: "/edited",
-          element: <Home />,
+          element: <EditedCurrencies />,
         },
         {
           path: "/search",
