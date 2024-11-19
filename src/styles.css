@@ -191,3 +191,47 @@
 .edit-currency__button:active {
   transform: scale(0.97);
 }
+
+.search-rates__filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-rates__date-picker,
+.search-rates__search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 200px;
+}
+
+.search-rates__date-picker:focus,
+.search-rates__search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-rates__fetch-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-rates__fetch-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.search-rates__fetch-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
