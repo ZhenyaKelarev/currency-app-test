@@ -1,4 +1,4 @@
-import { create } from "zustand" // Example with Zustand, adapt for your state management solution
+import { create } from "zustand"
 
 interface Currency {
   r030: number
